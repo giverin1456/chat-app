@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :messages
   
   validates :name, presence: true
+
+  has_many :room_users
+  has_many :rooms, through: :room_users
 end
 
 # なぜ複数形?→複数と繋がっているから
