@@ -1,7 +1,7 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-      hogefuga
+      <%= @room.name%>
     </div>
   </div>
   <div class="right-header">
@@ -13,7 +13,7 @@
 
 <div class="messages">
   <%= render partial: 'message', collection: @messages %>
-  <%# partialオプションで_message.html.erbを読み込む。そして繰り返す。なぜ@messages? %>
+  <%# partialオプションで_message.html.erbを読み込む。そして繰り返す。(eachの役割)なぜ@messages? %>
 </div>
 
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
