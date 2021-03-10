@@ -12,37 +12,8 @@
 </div>
 
 <div class="messages">
-<div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
-
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Tom
-      </div>
-      <div class="message-date">
-        2020/3/31(Wed) 12:47:30
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんばんは
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'message', collection: @messages %>
+  <%# partialオプションで_message.html.erbを読み込む。そして繰り返す。なぜ@messages? %>
 </div>
 
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
@@ -59,4 +30,4 @@
 
 <%#f.はブロック変数？それならどんな役割があるの？%>
 <%#@roomと@messageを指定する意味は？→このインスタンスを使用するため？%>
-<%#%>
+<%#collectionオプション→renderで繰り返し表示ができる%>
