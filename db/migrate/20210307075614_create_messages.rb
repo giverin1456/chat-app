@@ -8,3 +8,5 @@ class CreateMessages < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+# foreign_key（外部キー）が設定されている時は順番がある。(roomの方が先)
