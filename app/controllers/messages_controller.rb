@@ -27,8 +27,8 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
-    # contentをmessagesテーブルへ保存できるように。ユーザーidと紐付いているcontentを受け取れるようにする。
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+    # contentとimageをmessagesテーブルへ保存できるように。ユーザーidと紐付いているcontentを受け取れるようにする。imageという名前で送られてきた画像ファイルの保存を許可できる。そしてcreateで保存
     # margeメソッドでcurrent_userと紐付けする。
   end
 end
