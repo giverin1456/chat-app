@@ -12,5 +12,8 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+    # ストロングパラメーター。userモデルのnameとemailカラムを取り出す
   end
 end
+
+# 更新できたらルートに戻るが、更新できなかったらrenderでeditに戻る
